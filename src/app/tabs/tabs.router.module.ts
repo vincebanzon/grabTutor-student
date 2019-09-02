@@ -28,6 +28,11 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'tab2/subject-detail',
+        loadChildren: () =>
+          import('../subject-detail/subject-detail.module').then(m => m.SubjectDetailPageModule)
+      },
+      {
         path: 'tab3',
         children: [
           {
