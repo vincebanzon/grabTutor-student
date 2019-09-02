@@ -10,16 +10,39 @@ import { Router } from '@angular/router';
 })
 export class Tab2Page {
 
+  courses = this.getAllAvailableCourses();
+
   constructor(public router: Router, public navCtrl: NavController) {}
 
-  selectedSubject(subjId) {
-    console.log("Hello vince" + subjId);
-    this.pushPage();
+  pushPage(courseId) {
+    this.router.navigate(['/tabs/tab2/subject-detail', {
+      id: courseId,
+    }]);
   }
 
-  pushPage() {
-    this.router.navigateByUrl('/tabs/tab2/subject-detail');
-    // this.navCtrl.navigateForward('tab/tab2/subject-detail');
+  courseSelected(courseId) {
+    console.log("course id: ", courseId);
+    this.pushPage(courseId);
+  }
+
+  getAllAvailableCourses() {
+    return [{
+      id: 0,
+      name: 'Math',
+      sub: 'Learn Math in no time!'
+    }, {
+      id: 1,
+      name: 'Eng',
+      sub: 'Learn Eng in no time!'
+    }, {
+      id: 2,
+      name: 'Science',
+      sub: 'Learn Science in no time!'
+    }, {
+      id: 3,
+      name: 'History',
+      sub: 'Learn History in no time!'
+    }]
   }
 
 }
