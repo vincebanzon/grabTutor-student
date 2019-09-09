@@ -18,6 +18,11 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'tab1/schedule-detail',
+        loadChildren: () =>
+          import('../schedule-detail/schedule-detail.module').then(m => m.ScheduleDetailPageModule)
+      },
+      {
         path: 'tab2',
         children: [
           {
@@ -28,9 +33,9 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2/subject-detail',
+        path: 'tab2/subject-list',
         loadChildren: () =>
-          import('../subject-detail/subject-detail.module').then(m => m.SubjectDetailPageModule)
+          import('../subject-list/subject-list.module').then(m => m.SubjectListPageModule)
       },
       {
         path: 'tab3',

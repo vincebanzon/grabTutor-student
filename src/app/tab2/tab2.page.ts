@@ -14,15 +14,15 @@ export class Tab2Page {
 
   constructor(public router: Router, public navCtrl: NavController) {}
 
-  pushPage(courseId) {
-    this.router.navigate(['/tabs/tab2/subject-detail', {
-      id: courseId,
+  pushPage(course) {
+    this.router.navigate(['/tabs/tab2/subject-list', {
+      course: JSON.stringify(course)
     }]);
   }
 
-  courseSelected(courseId) {
-    console.log("course id: ", courseId);
-    this.pushPage(courseId);
+  courseSelected(course) {
+    console.log("course: ", course);
+    this.pushPage(course);
   }
 
   getAllAvailableCourses() {

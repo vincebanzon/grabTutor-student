@@ -3,11 +3,20 @@
     <ion-buttons slot="start" defaultHref="/tabs/tab2">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>subjectDetail</ion-title>
+    <ion-title>{{ course.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-I am subject detail
-{{ id }}
+  <p class="course-sub">{{ course.sub }}</p>
+
+  <!-- List of Subjects Items -->
+  <ion-list>
+    <ion-item (click)="subjectSelected(subject)" *ngFor="let subject of subjects;">
+      <ion-label>
+        <h3>{{subject.name}}</h3>
+        <p>{{subject.sub}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

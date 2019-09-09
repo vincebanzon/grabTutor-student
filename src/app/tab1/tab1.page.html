@@ -1,63 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Home
+      Schedules
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Schedules</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-
     <!-- List of Text Items -->
     <ion-list>
-      <ion-item>
+      <ion-item (click)="scheduleSelected(schedule)" *ngFor="let schedule of schedules;">
         <ion-label>
-          <h3>Pokémon Yellow</h3>
-          <p>Lorem ipsum</p>
+          <h3>{{ schedule.subject.name }}</h3>
+          <p>{{ schedule.subject.sub }}</p>
         </ion-label>
         <ion-label style="float: right; text-align: right;">
-          <h3>8:00</h3>
-          <p>Saturday</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h3>Pokémon Yellow</h3>
-          <p>Lorem ipsum</p>
-        </ion-label>
-        <ion-label style="float: right; text-align: right;">
-          <h3>8:00</h3>
-          <p>Saturday</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h3>Pokémon Yellow</h3>
-          <p>Lorem ipsum</p>
-        </ion-label>
-        <ion-label style="float: right; text-align: right;">
-          <h3>8:00</h3>
-          <p>Saturday</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h3>Pokémon Yellow</h3>
-          <p>Lorem ipsum</p>
-        </ion-label>
-        <ion-label style="float: right; text-align: right;">
-          <h3>8:00</h3>
-          <p>Saturday</p>
+          <h3>{{ schedule.starttime }}</h3>
+          <p>{{ schedule.date }}</p>
         </ion-label>
       </ion-item>
     </ion-list>

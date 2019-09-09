@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-subject-detail',
-  templateUrl: './subject-detail.page.html',
-  styleUrls: ['./subject-detail.page.scss'],
+  selector: 'app-subject-list',
+  templateUrl: './subject-list.page.html',
+  styleUrls: ['./subject-list.page.scss'],
 })
-export class SubjectDetailPage implements OnInit {
+export class SubjectListPage implements OnInit {
+
 
   course: any;
   subjects: any;

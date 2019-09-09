@@ -6,6 +6,12 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  { path: 'schedule-detail', loadChildren: './schedule-detail/schedule-detail.module#ScheduleDetailPageModule' },
+  { path: 'student-profile', loadChildren: './student-profile/student-profile.module#StudentProfilePageModule' },
+  { path: 'subject-list', loadChildren: './subject-list/subject-list.module#SubjectListPageModule' },
+  { path: 'schedule-config', loadChildren: './schedule-config/schedule-config.module#ScheduleConfigPageModule' },
+  { path: 'tutor-detail', loadChildren: './tutor-detail/tutor-detail.module#TutorDetailPageModule' },
+  { path: 'tutor-list', loadChildren: './tutor-list/tutor-list.module#TutorListPageModule' },
 ];
 @NgModule({
   imports: [

@@ -15,9 +15,9 @@ import { SubjectDetailPage } from './../subject-detail/subject-detail.page';
       { path: '', component: Tab2Page },
       // { path: '/subject-details', component: SubjectDetailPage}
       { 
-        path: '/subject-details',
+        path: '/subject-list',
         loadChildren: () => 
-          import('../subject-detail/subject-detail.module').then(m => m.SubjectDetailPageModule)
+          import('../subject-list/subject-list.module').then(m => m.SubjectListPageModule)
       }
       
   ])
