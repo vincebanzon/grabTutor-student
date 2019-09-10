@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tutor-list</ion-title>
+    <ion-buttons slot="start" defaultHref="/tabs/tab2">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tutors</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- List of Tutor Items -->
+  <ion-list>
+      <ion-item (click)="tutorSelected(tutor)" *ngFor="let tutor of tutors;">
+        <ion-label>
+          <h3>{{tutor.name}}</h3>
+          <p>{{tutor.profession}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
 
 </ion-content>

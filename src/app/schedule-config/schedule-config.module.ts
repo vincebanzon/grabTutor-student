@@ -11,6 +11,11 @@ const routes: Routes = [
   {
     path: '',
     component: ScheduleConfigPage
+  },
+  {
+    path: '/tutor-list',
+    loadChildren: () =>
+      import('../tutor-list/tutor-list.module').then(m => m.TutorListPageModule)
   }
 ];
 

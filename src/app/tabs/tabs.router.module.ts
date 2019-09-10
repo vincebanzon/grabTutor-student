@@ -38,6 +38,21 @@ const routes: Routes = [
           import('../subject-list/subject-list.module').then(m => m.SubjectListPageModule)
       },
       {
+        path: 'tab2/schedule-config',
+        loadChildren: () =>
+          import('../schedule-config/schedule-config.module').then(m => m.ScheduleConfigPageModule)
+      },
+      {
+        path: 'tab2/tutor-list',
+        loadChildren: () =>
+          import('../tutor-list/tutor-list.module').then(m => m.TutorListPageModule)
+      },
+      {
+        path: 'tab2/tutor-detail',
+        loadChildren: () =>
+          import ('../tutor-detail/tutor-detail.module').then(m => m.TutorDetailPageModule)
+      },
+      {
         path: 'tab3',
         children: [
           {

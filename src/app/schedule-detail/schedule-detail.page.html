@@ -3,6 +3,9 @@
       <ion-buttons slot="start" defaultHref="/tabs/tab1">
         <ion-back-button></ion-back-button>
       </ion-buttons>
+      <ion-buttons slot="end" (click)="cancelClicked()">
+        <ion-button>Cancel</ion-button>
+      </ion-buttons>
       <ion-title>{{ schedule.subject.name }}</ion-title>
     </ion-toolbar>
   </ion-header>

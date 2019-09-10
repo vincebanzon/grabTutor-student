@@ -1,12 +1,22 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start" defaultHref="/tabs/tab2">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
-      <ion-title>{{ course.name }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" defaultHref="/tabs/tab2">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Subjects</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
+  <p class="course-sub">Please select a subject</p>
 
+  <!-- List of Subjects Items -->
+  <ion-list>
+    <ion-item (click)="subjectSelected(subject)" *ngFor="let subject of subjects;">
+      <ion-label>
+        <h3>{{subject.name}}</h3>
+        <p>{{subject.sub}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

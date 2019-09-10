@@ -11,6 +11,11 @@ const routes: Routes = [
   {
     path: '',
     component: SubjectListPage
+  },
+  {
+    path: '/schedule-config',
+    loadChildren: () =>
+      import('../schedule-config/schedule-config.module').then(m => m.ScheduleConfigPageModule)
   }
 ];
 

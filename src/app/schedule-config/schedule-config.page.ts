@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule-config',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleConfigPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToNext() {
+    console.log("going to next page");
+    this.pushPage();
+  }
+
+  pushPage() {
+    this.router.navigate(['/tabs/tab2/tutor-list', {id: 1}])
   }
 
 }

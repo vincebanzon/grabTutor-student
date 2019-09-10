@@ -18,4 +18,9 @@ export class ScheduleDetailPage implements OnInit {
     console.log(this.schedule);
   }
 
+  cancelClicked() {
+    console.log("Cancelling schedule")
+    // prompt user for confirmation
+  }
+
 }

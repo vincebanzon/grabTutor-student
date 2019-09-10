@@ -16,13 +16,16 @@ export class SubjectListPage implements OnInit {
 
   ngOnInit() {
     this.course = JSON.parse(this.route.snapshot.paramMap.get('course'));
+    if(!this.course) {
+      this.course = [];
+    }
     console.log('course: ');
     console.log(this.course);
     this.subjects = this.getAllSubjectsFromCourse(this.course.id);
   }
 
   pushPage(subject) {
-    this.router.navigate(['/tabs/tab2/schedules', {
+    this.router.navigate(['/tabs/tab2/schedule-config', {
       subject: JSON.stringify(subject)
     }]);
   }
