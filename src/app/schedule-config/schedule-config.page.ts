@@ -13,10 +13,11 @@ import { RemoveSchedule } from './../actions/tutorial.actions';
 })
 export class ScheduleConfigPage implements OnInit {
 
-  schedules$: any;
+  // schedules$: any;   // note id a1: alternative code below. 
+  @Select(ScheduleState.getSchedules) schedules$: any;
 
   constructor(private router: Router, private store: Store) {
-    this.schedules$ = this.store.select(state => state.schedules.schedules)
+    // this.schedules$ = this.store.select(state => state.schedules.schedules)    // Note id a2: continuation from Note id a1.
   }
 
   ngOnInit() {
