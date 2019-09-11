@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store, Select } from '@ngxs/store';
+import { AddSchedule } from './../actions/tutorial.actions';
+import { ScheduleState } from './../states/schedule.state';
+import { RemoveSchedule } from './../actions/tutorial.actions';
+
 
 @Component({
   selector: 'app-schedule-config',
@@ -8,7 +13,11 @@ import { Router } from '@angular/router';
 })
 export class ScheduleConfigPage implements OnInit {
 
-  constructor(private router: Router) { }
+  schedules$: any;
+
+  constructor(private router: Router, private store: Store) {
+    this.schedules$ = this.store.select(state => state.schedules.schedules)
+  }
 
   ngOnInit() {
   }
@@ -22,4 +31,11 @@ export class ScheduleConfigPage implements OnInit {
     this.router.navigate(['/tabs/tab2/tutor-list', {id: 1}])
   }
 
+  addSchedule(id, subjectId) {
+    this.store.dispatch(new AddSchedule({id: id, subjectId: subjectId}))
+  }
+
+  removeSchedule(id) {
+    this.store.dispatch(new RemoveSchedule(id))
+  }
 }

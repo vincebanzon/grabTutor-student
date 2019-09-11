@@ -22,9 +22,20 @@ Saturday
 </p>
 
 
-<ion-input placeholder="Notes">
+<!-- <ion-input placeholder="Notes" #name> -->
+
+<ion-input placeholder="Id " #id>
 
 </ion-input>
 
+<ion-input placeholder="Subject id " #subjectId></ion-input>
+<ion-button (click)="addSchedule(id.value, subjectId.value)">Add Schedule</ion-button>
 
+
+
+<ul>
+  <li (click)='removeSchedule(schedule.id)' *ngFor="let schedule of schedules$ | async">
+    <a href="">{{ schedule.id }}</a>
+  </li>
+</ul>
 </ion-content>
