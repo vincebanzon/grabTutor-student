@@ -8,12 +8,44 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ScheduleDetailPage implements OnInit {
 
-  schedule: any;
+  schedule = {
+    id: 0,
+    subjectId: 0,
+    studentId: 0,
+    tutorId: 0,
+    starttime: "00:00",
+    endtime: "00:00",
+    date: "September 12, 2019 Thursday",
+    subjectInfo: {
+      id: 0,
+      name: "Math",
+      sub: "Learn Math in no time!"  
+    },
+    studentInfo: {
+      id: 0,
+      firstname: "Jose",
+      lastname: "rizal",
+      address: "",
+      age: "21",
+      phoneNo: "091234123412",
+      role: "student"
+    },
+    tutorInfo: {
+      id: 0,
+      firstname: "Teacher",
+      lastname: "Ann",
+      address: "",
+      age: "29",
+      phoneNo: "091234123412",
+      role: "tutor"
+    }
+  };
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.schedule = JSON.parse(this.route.snapshot.paramMap.get('schedule'));
+    // this.schedule = JSON.parse(this.route.snapshot.paramMap.get('schedule'));
+    // this.schedule = this.scheduleModel;
     console.log("schedule");
     console.log(this.schedule);
   }

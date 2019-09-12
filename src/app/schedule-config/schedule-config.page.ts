@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store, Select } from '@ngxs/store';
-import { AddSchedule } from './../actions/tutorial.actions';
+import { AddSchedule } from '../actions/schedule.actions';
 import { ScheduleState } from './../states/schedule.state';
-import { RemoveSchedule } from './../actions/tutorial.actions';
+import { RemoveSchedule } from '../actions/schedule.actions';
 
 
 @Component({

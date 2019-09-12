@@ -1,6 +1,6 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store'
 import { Schedule } from './../models/schedule.model'
-import { AddSchedule, RemoveSchedule } from './../actions/tutorial.actions'
+import { AddSchedule, RemoveSchedule } from '../actions/schedule.actions'
 
 export class ScheduleStateModel {
   schedules: Schedule[]

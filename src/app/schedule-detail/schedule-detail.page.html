@@ -6,11 +6,30 @@
       <ion-buttons slot="end" (click)="cancelClicked()">
         <ion-button>Cancel</ion-button>
       </ion-buttons>
-      <ion-title>{{ schedule.subject.name }}</ion-title>
+      <ion-title>Schedule</ion-title>
     </ion-toolbar>
   </ion-header>
 
 <ion-content>
-  <p>{{ schedule.subject.name }}</p>
-  <p>{{ schedule.subject.sub }}</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{ schedule.starttime }} - {{ schedule.endtime }}</ion-card-subtitle>
+      <ion-card-title>{{ schedule.tutorInfo.firstname }} {{ schedule.tutorInfo.lastname }}</ion-card-title>
+      <ion-card-subtitle>{{ schedule.date }}</ion-card-subtitle>
+
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>{{ schedule.subjectInfo.name }}</ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        {{ schedule.subjectInfo.sub }}
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-item>
+      
+      
+    </ion-card-content>
+  </ion-card>
 </ion-content>
