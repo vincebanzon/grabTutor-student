@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { Store } from '@ngxs/store';
+import { RemoveSchedule } from '../actions/schedule.actions';
 
 @Component({
   selector: 'app-schedule-detail',
@@ -8,43 +11,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ScheduleDetailPage implements OnInit {
 
-  schedule = {
-    id: 0,
-    subjectId: 0,
-    studentId: 0,
-    tutorId: 0,
-    starttime: "00:00",
-    endtime: "00:00",
-    date: "September 12, 2019 Thursday",
-    subjectInfo: {
-      id: 0,
-      name: "Math",
-      sub: "Learn Math in no time!"  
-    },
-    studentInfo: {
-      id: 0,
-      firstname: "Jose",
-      lastname: "rizal",
-      address: "",
-      age: "21",
-      phoneNo: "091234123412",
-      role: "student"
-    },
-    tutorInfo: {
-      id: 0,
-      firstname: "Teacher",
-      lastname: "Ann",
-      address: "",
-      age: "29",
-      phoneNo: "091234123412",
-      role: "tutor"
-    }
-  };
+  schedule: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+    public alertController: AlertController,
+    private store: Store,
+    private router: Router) { }
 
   ngOnInit() {
-    // this.schedule = JSON.parse(this.route.snapshot.paramMap.get('schedule'));
+    this.schedule = JSON.parse(this.route.snapshot.paramMap.get('schedule'));
     // this.schedule = this.scheduleModel;
     console.log("schedule");
     console.log(this.schedule);
@@ -53,6 +28,44 @@ export class ScheduleDetailPage implements OnInit {
   cancelClicked() {
     console.log("Cancelling schedule")
     // prompt user for confirmation
+    this.presentAlertConfirm()
+  }
+
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      header: 'Cancel',
+      message: 'Are you sure you want to cancel schedule?',
+      buttons: [
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Cancelling schedule');
+            this.removeSchedule(this.schedule.id);
+          }
+        }, {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancelled');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  
+  removeSchedule(id) {
+    this.store.dispatch(new RemoveSchedule(id))
+    // TODO: remove from database
+    // after cancel, go back to homepage
+    this.goToHome();
+  }
+
+  goToHome() {
+    this.router.navigate(['/tabs/tab1'])
   }
 
 }

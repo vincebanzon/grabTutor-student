@@ -11,8 +11,8 @@
     <ion-list>
       <ion-item (click)="scheduleSelected(schedule)" *ngFor="let schedule of schedules;">
         <ion-label>
-          <h3>{{ schedule.subject.name }}</h3>
-          <p>{{ schedule.subject.sub }}</p>
+          <h3>{{ schedule.subjectInfo.name }}</h3>
+          <p>{{ schedule.subjectInfo.sub }}</p>
         </ion-label>
         <ion-label style="float: right; text-align: right;">
           <h3>{{ schedule.starttime }}</h3>
