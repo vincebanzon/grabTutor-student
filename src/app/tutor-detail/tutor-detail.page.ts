@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+  import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tutor-detail',
@@ -16,7 +17,9 @@ export class TutorDetailPage implements OnInit {
   endtime;
   date;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  balance = 150;
+
+  constructor(private route: ActivatedRoute, private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
     this.tutor = JSON.parse(this.route.snapshot.paramMap.get('tutor'));
@@ -30,8 +33,58 @@ export class TutorDetailPage implements OnInit {
 
   doneClicked() {
     // save to database
-     
-    this.goToHome();
+    if(this.balance > 150)
+      this.presentAlertConfirm();
+    else 
+      this.presentAlertNotEnoughCredits()
+    
+  }
+
+  // create no booking because you don't have enough credits
+
+  async presentAlertNotEnoughCredits() {
+    const alert = await this.alertController.create({
+      header: 'Booking',
+      message: "Sorry you don't have enough balance to book.",
+      buttons: [
+        {
+          text: "Ok",
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancelled');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      header: 'Booking',
+      message: 'Are you sure you want to book this tutor?',
+      buttons: [
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Cancelling schedule');
+            this.goToHome();
+            // this.removeSchedule(this.schedule.id);
+          }
+        }, {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancelled');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   goToHome() {

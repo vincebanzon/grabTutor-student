@@ -34,7 +34,7 @@ export class ScheduleDetailPage implements OnInit {
   async presentAlertConfirm() {
     const alert = await this.alertController.create({
       header: 'Cancel',
-      message: 'Are you sure you want to cancel schedule?',
+      message: 'Are you sure you want to cancel this schedule?',
       buttons: [
         {
           text: 'Yes',
