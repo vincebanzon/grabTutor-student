@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Store, Select } from '@ngxs/store';
 import { AddSchedule } from '../actions/schedule.actions';
 import { ScheduleState } from './../states/schedule.state';
@@ -16,11 +16,22 @@ export class ScheduleConfigPage implements OnInit {
   // schedules$: any;   // note id a1: alternative code below. 
   @Select(ScheduleState.getSchedules) schedules$: any;
 
-  constructor(private router: Router, private store: Store) {
+  starttime;
+  endtime;
+  date;
+  minDate;
+  subjectId;
+
+  constructor(private route: ActivatedRoute, private router: Router, private store: Store) {
     // this.schedules$ = this.store.select(state => state.schedules.schedules)    // Note id a2: continuation from Note id a1.
+    this.starttime = new Date().toISOString();
+    this.endtime = new Date().toISOString();
+    this.date = new Date().toISOString();
+    this.minDate = new Date().toISOString();
   }
 
   ngOnInit() {
+    this.subjectId = JSON.parse(this.route.snapshot.paramMap.get('subjectId'));
   }
 
   goToNext() {
@@ -29,7 +40,12 @@ export class ScheduleConfigPage implements OnInit {
   }
 
   pushPage() {
-    this.router.navigate(['/tabs/tab2/tutor-list', {id: 1}])
+    this.router.navigate(['/tabs/tab2/tutor-list', {
+      subjectId: this.subjectId,
+      starttime: this.starttime,
+      endtime: this.endtime,
+      date: this.date
+    }])
   }
 
   addSchedule(id, subjectId) {

@@ -26,7 +26,7 @@ export class SubjectListPage implements OnInit {
 
   pushPage(subject) {
     this.router.navigate(['/tabs/tab2/schedule-config', {
-      subject: JSON.stringify(subject)
+      subjectId: subject.id
     }]);
   }
 
