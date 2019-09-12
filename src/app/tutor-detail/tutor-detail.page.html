@@ -11,5 +11,26 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <img [src]="tutor.avatar" />
+    <ion-card-header>
+      <ion-card-title>{{ tutor.firstname }} {{ tutor.lastname }}</ion-card-title>
+      <ion-card-subtitle>{{ tutor.sub }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ tutor.moto }}<br>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      <ion-list>
+        <ion-item *ngFor="let credential of credentials;">
+          <ion-label>
+            <h3>{{ credential.name }}</h3>
+            <p>{{ credential.sub }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
 
+    </ion-card-content>
+  </ion-card>
 </ion-content>

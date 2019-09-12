@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tutor-detail',
@@ -8,12 +8,29 @@ import { Router } from '@angular/router';
 })
 export class TutorDetailPage implements OnInit {
 
-  constructor(private router: Router) { }
+  tutor;
+  credentials;
+
+  subjectId;
+  starttime;
+  endtime;
+  date;
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.tutor = JSON.parse(this.route.snapshot.paramMap.get('tutor'));
+    this.credentials = this.tutor.credentials;
+    console.log(this.tutor);
+    this.subjectId = this.route.snapshot.paramMap.get('subjectId');
+    this.starttime = this.route.snapshot.paramMap.get('starttime');
+    this.endtime = this.route.snapshot.paramMap.get('endtime');
+    this.date = this.route.snapshot.paramMap.get('date');
   }
 
   doneClicked() {
+    // save to database
+     
     this.goToHome();
   }
 
