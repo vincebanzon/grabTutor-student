@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ScheduleService } from '../services/schedule.service';
 
 @Component({
   selector: 'app-tab1',
@@ -8,9 +9,20 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  schedules = this.getAllSchedules();
+  schedules: any = [];
 
-  constructor(public router: Router) {}
+  constructor(public router: Router, private scheduleService: ScheduleService) {}
+
+  ngOnInit() {
+    this.schedules = this.getAllSchedules();
+    // this.schedules = this.scheduleService.getSchedules();
+    console.log("s'");
+    if(!this.schedules){ 
+      this.schedules = [];
+    }
+    console.log("Schedules: ")
+    console.log(this.schedules);
+  }
 
   pushPage(schedule) {
     this.router.navigate(['/tabs/tab1/schedule-detail', {
@@ -59,10 +71,11 @@ export class Tab1Page {
       starttime: "00:00",
       endtime: "00:00",
       date: "Thursday",
+      status: "Active",
       subjectInfo: {
         id: 0,
         name: "Math",
-        sub: "Learn Math in no time!"  
+        sub: "Learn Math in no time!sdfsdfdsfdsfdsfdsf"  
       },
       studentInfo: {
         id: 0,
@@ -91,6 +104,7 @@ export class Tab1Page {
       starttime: "00:00",
       endtime: "00:00",
       date: "Thursday",
+      status: "Active",
       subjectInfo: {
         id: 0,
         name: "English",
@@ -123,6 +137,7 @@ export class Tab1Page {
       starttime: "00:00",
       endtime: "00:00",
       date: "Thursday",
+      status: "Active",
       subjectInfo: {
         id: 0,
         name: "Science",
@@ -155,6 +170,7 @@ export class Tab1Page {
       starttime: "00:00",
       endtime: "00:00",
       date: "Thursday",
+      status: "Pending",
       subjectInfo: {
         id: 0,
         name: "History",

@@ -1,0 +1,6 @@
+Todo: 
+
+Modal to infrom when connection or disconnected from firebase
+List previous schedules
+
+

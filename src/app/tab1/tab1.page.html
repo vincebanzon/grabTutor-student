@@ -7,17 +7,27 @@
 </ion-header>
 
 <ion-content>
-    <!-- List of Text Items -->
-    <ion-list>
-      <ion-item (click)="scheduleSelected(schedule)" *ngFor="let schedule of schedules;">
-        <ion-label>
-          <h3>{{ schedule.subjectInfo.name }}</h3>
-          <p>{{ schedule.subjectInfo.sub }}</p>
-        </ion-label>
-        <ion-label style="float: right; text-align: right;">
-          <h3>{{ schedule.starttime }}</h3>
-          <p>{{ schedule.date }}</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
+  <ion-list *ngIf="schedules.length == 0">
+    <ion-item lines="none"></ion-item>
+    <ion-item lines="none">No schedules available.</ion-item>
+    <ion-item lines="none">Create a new schedule in Courses tabs.</ion-item>
+  </ion-list>
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-item (click)="scheduleSelected(schedule)" *ngFor="let schedule of schedules;">
+      <ion-label>
+        <h2>{{ schedule.subjectInfo.name }}</h2>
+        <!-- <h3>{{ schedule.subjectInfo.sub }}</h3> -->
+        <p>{{ schedule.subjectInfo.sub }}</p>
+      </ion-label>
+      <!-- <ion-note> -->
+          <!-- style="float: right; text-align: right;" -->
+      <ion-label class="ion-text-end ion-float-right time-and-date">
+        <h2 class="">{{ schedule.starttime }}</h2>
+        <h3>{{ schedule.date }}</h3>
+        <p *ngIf="schedule.status == 'Pending'">{{ schedule.status }}</p>
+      </ion-label>
+      <!-- </ion-note> -->
+    </ion-item>
+  </ion-list>
 </ion-content>
