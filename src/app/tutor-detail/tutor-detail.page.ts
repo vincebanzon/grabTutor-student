@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-  import { AlertController } from '@ionic/angular';
+  import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tutor-detail',
@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class TutorDetailPage implements OnInit {
 
+  isBookBtnVisible = false;
   tutor;
   credentials;
   reviews;
@@ -20,9 +21,13 @@ export class TutorDetailPage implements OnInit {
 
   balance = 150;
 
-  constructor(private route: ActivatedRoute, private router: Router, private alertController: AlertController) { }
+  constructor(private route: ActivatedRoute, private router: Router, private alertController: AlertController, private navCtrl: NavController) { }
 
+  // parameters: 
+  //  tutor: JSON
+  //  isBookBtnVisible: boolean
   ngOnInit() {
+    this.isBookBtnVisible = this.route.snapshot.paramMap.get('isBookBtnVisible') === "true";
     this.tutor = JSON.parse(this.route.snapshot.paramMap.get('tutor'));
     this.credentials = this.tutor.credentials;
     this.reviews = this.tutor.reviews;
@@ -35,10 +40,8 @@ export class TutorDetailPage implements OnInit {
 
   doneClicked() {
     // save to database
-    if(this.balance > 150)
-      this.presentAlertConfirm();
-    else 
-      this.presentAlertNotEnoughCredits()
+    this.presentAlertConfirm();
+    
     
   }
 
@@ -63,10 +66,33 @@ export class TutorDetailPage implements OnInit {
     await alert.present();
   }
 
+  async presentAlertTermsAndConditions() {
+    const alert = await this.alertController.create({
+      header: 'Terms and Conditions',
+      message: "By continuing, you agree to pay P200.00. This is not refundable if cancelled within the day.",
+      buttons: [
+        {
+          text: "Ok",
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancelled');
+            if(this.balance >= 150)
+              this.presentAlertConfirm();
+            else 
+              this.presentAlertNotEnoughCredits()
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   async presentAlertConfirm() {
     const alert = await this.alertController.create({
       header: 'Booking',
-      message: 'Are you sure you want to book this tutor?',
+      message: 'This will deduct P200.00 from your balance. This is not refundable if cancelled within the day. Are you sure you want to continue?',
       buttons: [
         {
           text: 'Yes',

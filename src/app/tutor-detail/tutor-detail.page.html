@@ -3,7 +3,7 @@
     <ion-buttons slot="start" defaultHref="">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end" (click)="doneClicked()">
+    <ion-buttons slot="end" (click)="doneClicked()" *ngIf="isBookBtnVisible">
       <ion-button>Book</ion-button>
     </ion-buttons>
     <ion-title>Tutor</ion-title>
@@ -22,6 +22,8 @@
       {{ tutor.moto }}<br>
       Keep close to Nature's heart... and break clear away, once in awhile,
       and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      <br><br>
+      <div *ngIf="credentials">Credentials</div>
       <ion-list>
         <ion-item *ngFor="let credential of credentials;">
           <ion-label>
@@ -32,7 +34,7 @@
       </ion-list>
 
       <br>
-      Reviews
+      <div *ngIf="reviews">Reviews</div>
       <ion-list>
         <ion-item *ngFor="let review of reviews;">
           <ion-avatar slot="start">

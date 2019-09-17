@@ -13,7 +13,7 @@ import { Tab1Page } from './tab1.page';
     RouterModule.forChild([
       { path: '', component: Tab1Page },
       {
-        path: '/schedule-details',
+        path: '/schedule-detail',
         loadChildren: () => 
           import('../schedule-detail/schedule-detail.module').then(m => m.ScheduleDetailPageModule)
       }

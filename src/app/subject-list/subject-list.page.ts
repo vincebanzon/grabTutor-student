@@ -37,7 +37,7 @@ export class SubjectListPage implements OnInit {
   getAllSubjectsFromCourse(courseId) {
     return [{
         id: 0,
-        name: 'Basic Math (+, -, x, /)',
+        name: 'Basic Math (+, -, x, %)',
         sub: 'Learn Math in no time!'
       }, {
         id: 1,

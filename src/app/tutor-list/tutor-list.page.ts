@@ -12,7 +12,7 @@ export class TutorListPage implements OnInit {
 
   subjectId;
   starttime;
-  endtime;
+  duration;
   date;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
@@ -20,7 +20,7 @@ export class TutorListPage implements OnInit {
   ngOnInit() {
     this.subjectId = this.route.snapshot.paramMap.get('subjectId');
     this.starttime = this.route.snapshot.paramMap.get('starttime');
-    this.endtime = this.route.snapshot.paramMap.get('endtime');
+    this.duration = this.route.snapshot.paramMap.get('duration');
     this.date = this.route.snapshot.paramMap.get('date');
   }
 
@@ -293,9 +293,10 @@ export class TutorListPage implements OnInit {
     this.router.navigate(['/tabs/tab2/tutor-detail', {
       subjectId: this.subjectId,
       starttime: this.starttime,
-      endtime: this.endtime,
+      duration: this.duration,
       date: this.date,
-      tutor: JSON.stringify(tutor)
+      tutor: JSON.stringify(tutor),
+      isBookBtnVisible: true
     }])
   }
 
