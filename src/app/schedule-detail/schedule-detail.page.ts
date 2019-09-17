@@ -31,10 +31,35 @@ export class ScheduleDetailPage implements OnInit {
     this.presentAlertConfirm()
   }
 
+  async presentAlertTermsAndConditions() {
+    const alert = await this.alertController.create({
+      header: 'Terms and Conditions',
+      message: 'Cancelled booking within the day of schedule is non-refundable. Are you sure you want to continue?',
+      buttons: [
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Cancelling schedule');
+            this.removeSchedule(this.schedule.id);
+          }
+        }, {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancelled');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   async presentAlertConfirm() {
     const alert = await this.alertController.create({
       header: 'Cancel',
-      message: 'Are you sure you want to cancel this schedule?',
+      message: 'Cancelled booking within the day of schedule is non-refundable. Are you sure you want to cancel?',
       buttons: [
         {
           text: 'Yes',
@@ -66,6 +91,10 @@ export class ScheduleDetailPage implements OnInit {
 
   goToHome() {
     this.router.navigate(['/tabs/tab1'])
+  }
+
+  viewTutor() {
+    this.router.navigate(["/tabs/tab1/tutor-detail", {tutor: JSON.stringify(this.schedule.tutorInfo)}])
   }
 
 }

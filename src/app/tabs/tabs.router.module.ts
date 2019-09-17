@@ -23,6 +23,11 @@ const routes: Routes = [
           import('../schedule-detail/schedule-detail.module').then(m => m.ScheduleDetailPageModule)
       },
       {
+        path: 'tab1/tutor-detail',
+        loadChildren: () =>
+          import('../tutor-detail/tutor-detail.module').then(m => m.TutorDetailPageModule)
+      },
+      {
         path: 'tab2',
         children: [
           {
@@ -61,6 +66,11 @@ const routes: Routes = [
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
           }
         ]
+      },
+      {
+        path: 'tab3/topup',
+        loadChildren: () => 
+          import('../topup/topup.module').then(m => m.TopupPageModule)
       },
       {
         path: '',

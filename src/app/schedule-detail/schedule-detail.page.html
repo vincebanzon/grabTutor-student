@@ -12,22 +12,45 @@
 
 <ion-content>
   <ion-card>
-    <!-- <img [src]="schedule.tutorInfo.avatar" /> -->
-    <ion-card-header>
-      <ion-card-subtitle>{{ schedule.starttime }} - {{ schedule.endtime }}</ion-card-subtitle>
-      <ion-card-title>{{ schedule.tutorInfo.firstname }} {{ schedule.tutorInfo.lastname }}</ion-card-title>
-      <ion-card-subtitle>{{ schedule.date }}</ion-card-subtitle>
 
+    <!-- <img [src]="schedule.tutorInfo.avatar" /> -->
+    
+    <ion-list>
+      <ion-item lines="none" (click)="viewTutor()">
+        <ion-avatar slot="start">
+          <img src="assets/avatar/avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ schedule.tutorInfo.firstname }} {{ schedule.tutorInfo.lastname }}</h2>
+          <h3>{{ schedule.tutorInfo.sub }}</h3>
+          <p>{{ schedule.tutorInfo.moto }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-card-header>
+      <p>{{ schedule.date }}</p>
+      <p>{{ schedule.starttime }} - {{ schedule.endtime }}</p>
+      
+      <!-- <ion-card-subtitle>{{ schedule.starttime }} - {{ schedule.endtime }}</ion-card-subtitle> -->
+      <ion-card-title>{{ schedule.subjectInfo.name }}</ion-card-title>
+      <!-- <ion-card-subtitle>{{ schedule.date }}</ion-card-subtitle> -->
     </ion-card-header>
-  
+    <!-- <h3>{{ schedule.starttime }} - {{ schedule.endtime }}</h3> -->
+    <!-- <p>{{ schedule.date }}</p> -->
     <ion-card-content>
       <ion-item lines="none">
-        <ion-label>{{ schedule.subjectInfo.name }}</ion-label>
+        Location: <br>
+        {{ schedule.location }}
+
       </ion-item>
+      <br>
       <ion-item lines="none">
         {{ schedule.subjectInfo.sub }}
-        Keep close to Nature's heart... and break clear away, once in awhile,
-        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Suspendisse vestibulum, quam eget tincidunt pellentesque, enim nibh ornare urna, 
+        sed bibendum quam ligula in ipsum. Duis tempor, sapien eget viverra scelerisque, 
+        ipsum ligula accumsan diam, tincidunt bibendum dui lacus eget sapien.
       </ion-item>
       
       

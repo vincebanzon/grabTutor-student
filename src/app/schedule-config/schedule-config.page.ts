@@ -17,17 +17,19 @@ export class ScheduleConfigPage implements OnInit {
   @Select(ScheduleState.getSchedules) schedules$: any;
 
   starttime;
-  endtime;
+  duration;
   date;
   minDate;
   subjectId;
+  currentDateTime;
 
   constructor(private route: ActivatedRoute, private router: Router, private store: Store) {
     // this.schedules$ = this.store.select(state => state.schedules.schedules)    // Note id a2: continuation from Note id a1.
     this.starttime = new Date().toISOString();
-    this.endtime = new Date().toISOString();
+    this.duration = 1;
     this.date = new Date().toISOString();
     this.minDate = new Date().toISOString();
+    this.currentDateTime = new Date().toISOString();
   }
 
   ngOnInit() {
@@ -43,7 +45,7 @@ export class ScheduleConfigPage implements OnInit {
     this.router.navigate(['/tabs/tab2/tutor-list', {
       subjectId: this.subjectId,
       starttime: this.starttime,
-      endtime: this.endtime,
+      duration: this.duration,
       date: this.date
     }])
   }

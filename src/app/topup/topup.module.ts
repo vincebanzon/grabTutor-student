@@ -5,17 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ScheduleDetailPage } from './schedule-detail.page';
+import { TopupPage } from './topup.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ScheduleDetailPage
-  },
-  {
-    path: "/tutor-detail",
-    loadChildren: () =>
-      import("../tutor-detail/tutor-detail.module").then(m => m.TutorDetailPageModule)
+    component: TopupPage
   }
 ];
 
@@ -26,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ScheduleDetailPage]
+  declarations: [TopupPage]
 })
-export class ScheduleDetailPageModule {}
+export class TopupPageModule {}

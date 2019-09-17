@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'schedule-config', loadChildren: './schedule-config/schedule-config.module#ScheduleConfigPageModule' },
   { path: 'tutor-detail', loadChildren: './tutor-detail/tutor-detail.module#TutorDetailPageModule' },
   { path: 'tutor-list', loadChildren: './tutor-list/tutor-list.module#TutorListPageModule' },
+  { path: 'topup', loadChildren: './topup/topup.module#TopupPageModule' },
 ];
 @NgModule({
   imports: [

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" defaultHref="/tabs/tab3">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" (click)="doneClicked()">
+      <ion-button>Done</ion-button>
+    </ion-buttons>
+    <ion-title>Top-up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Amount</ion-label>
+      <ion-input name="amount" [(ngModel)]="amount" autofocus="true" clear-input="true" required="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Account Number</ion-label>
+      <ion-input name="accountNo" [(ngModel)]="accountNo" inputmode="numeric" required="true" clear-input="true"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">CVC</ion-label>
+          <ion-input name="cvc" [(ngModel)]="cvc" placeholder="000" max="999" min-length="3" required="true" clear-input="true"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Expiry</ion-label>
+          <ion-input name="expiry" [(ngModel)]="expiry" placeholder="mm/yy" required="true" clear-input="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+</ion-content>

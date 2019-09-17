@@ -28,19 +28,19 @@ export class Tab2Page {
   getAllAvailableCourses() {
     return [{
       id: 0,
-      name: 'Course 1',
+      name: 'Math',
       sub: 'Learn Math in no time!'
     }, {
       id: 1,
-      name: 'Course 2',
+      name: 'English',
       sub: 'Learn Eng in no time!'
     }, {
       id: 2,
-      name: 'Course 3',
+      name: 'Science',
       sub: 'Learn Science in no time!'
     }, {
       id: 3,
-      name: 'Course 4',
+      name: 'History',
       sub: 'Learn History in no time!'
     }]
   }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -10,7 +11,7 @@ export class Tab3Page {
   user;
   credentials;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.user = this.getUserInfo();
@@ -35,5 +36,14 @@ export class Tab3Page {
         sub: '3rd Year'
       }]
     }
+  }
+  
+  goToTopup() {
+    this.pushPage();
+  }
+
+
+  pushPage() {
+    this.router.navigateByUrl('/tabs/tab3/topup');
   }
 }
