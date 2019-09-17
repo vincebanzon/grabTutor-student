@@ -2,5 +2,32 @@ Todo:
 
 Modal to infrom when connection or disconnected from firebase
 List previous schedules
+Screen flow
+
+Applications
+  1. tutor (mobile)
+  2. student (mobile)
+  3. admin (web)
+
+Price varies by level
+    Preschool
+    elementary
+    highschool
+    junior high school
+
+
+      / Add status in homepage
+Add Payment page for credit card input
+Terms and Agreements
+Reviews for tutor by users (not rating)
+Schedule detail can view tutor profile
+Credits for each account
+Price for each booking
+Sign up page for student
+
+Tutor app
+List of all schedules
+Notification
+
 
 
