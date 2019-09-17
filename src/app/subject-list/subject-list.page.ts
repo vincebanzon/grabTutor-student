@@ -37,48 +37,48 @@ export class SubjectListPage implements OnInit {
   getAllSubjectsFromCourse(courseId) {
     return [{
         id: 0,
-        name: 'Math',
+        name: 'Basic Math (+, -, x, /)',
         sub: 'Learn Math in no time!'
       }, {
         id: 1,
-        name: 'Eng',
-        sub: 'Learn Eng in no time!'
+        name: 'Addition',
+        sub: 'Learn Addition in no time!'
       }, {
         id: 2,
-        name: 'Science',
-        sub: 'Learn Science in no time!'
+        name: 'Subtraction',
+        sub: 'Learn how to subtract in no time!'
       }, {
         id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        name: 'Basic Algebra',
+        sub: 'Learn the basics in Algebra.'
       }, {
-        id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        id: 4,
+        name: 'Advanced Algebra',
+        sub: "Learn the in's and out's of Algebra."
       }, {
-        id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        id: 5,
+        name: 'Basic Calculus',
+        sub: 'Learn the basic in calculus.'
       }, {
-        id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        id: 6,
+        name: 'Advanced Calculus',
+        sub: 'Learn the calculus in different way.'
       }, {
-        id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        id: 7,
+        name: 'Calculus for beginners',
+        sub: "If you don't know a thing in calculus yet, take this subject."
       }, {
-        id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        id: 8,
+        name: 'Calculus for experts',
+        sub: 'Do you want to be an expert in calculus?'
       }, {
-        id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        id: 9,
+        name: 'Surface Area',
+        sub: 'Learn how to calculate Surface Area.'
       }, {
-        id: 3,
-        name: 'History',
-        sub: 'Learn History in no time!'
+        id: 10,
+        name: 'Calculating Volume of an object',
+        sub: 'Learn how to calculate volume of an object.'
     }]
   }
 
