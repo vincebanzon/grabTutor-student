@@ -38,6 +38,43 @@ export class TutorListPage implements OnInit {
       }, {
         name: 'School Graduated',
         sub: 'University of Cebu'
+      }],
+      reviews: [{
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "I learned a lot in our first session!",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/sandman.jpg",
+          firstname: "Peter",
+          lastname: "Parker"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Information overload from our session. Thank you.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/faith_hill.jpg",
+          firstname: "Isheen",
+          lastname: "Kae"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Teached me how to do things easier!",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/julius_jones.jpg",
+          firstname: "Julius",
+          lastname: "Jones"
+        }
       }]
     }, {
       id: 1,
@@ -45,13 +82,50 @@ export class TutorListPage implements OnInit {
       firstname: 'Han',
       lastname: 'Solo',
       sub: 'Look, kid...',
-      moto: "I've got enough on my plate as it is, and I...",
+      moto: "I've got enough on my plate as it is, and I will keep it.",
       credentials: [{
         name: 'Diploma',
         sub: 'BSED'
       }, {
         name: 'School Graduated',
         sub: 'University of Cebu'
+      }],
+      reviews: [{
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Teached me how to do things easier!",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/julius_jones.jpg",
+          firstname: "Julius",
+          lastname: "Jones"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Rey, thank you for teaching me.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/jack_sparrow_sullen.jpg",
+          firstname: "Alexandrei",
+          lastname: "the Great"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Information overload from our session. Thank you.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/faith_hill.jpg",
+          firstname: "Isheen",
+          lastname: "Kae"
+        }
       }]
     },{
       id: 2,
@@ -59,13 +133,50 @@ export class TutorListPage implements OnInit {
       firstname: 'Rey',
       lastname: 'Zoom',
       sub: 'I can handle myself',
-      moto: 'You will remove these restraints and leave...',
+      moto: 'You will remove these restraints and leave.',
       credentials: [{
         name: 'Diploma',
         sub: 'BSED'
       }, {
         name: 'School Graduated',
         sub: 'University of Cebu'
+      }],
+      reviews: [{
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Rey, thank you for teaching me.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/jack_sparrow_sullen.jpg",
+          firstname: "Alexandrei",
+          lastname: "the Great"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Information overload from our session. Thank you.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/faith_hill.jpg",
+          firstname: "Isheen",
+          lastname: "Kae"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Will definitely book again!",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/nugatowa.jpg",
+          firstname: "Ivan",
+          lastname: "Jane"
+        }
       }]
     }, {
       id: 3,
@@ -80,6 +191,43 @@ export class TutorListPage implements OnInit {
       }, {
         name: 'School Graduated',
         sub: 'University of Cebu'
+      }],
+      reviews: [{
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Will definitely book again!",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/nugatowa.jpg",
+          firstname: "Ivan",
+          lastname: "Jane"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Teached me how to do things easier!",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/julius_jones.jpg",
+          firstname: "Julius",
+          lastname: "Jones"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Information overload from our session. Thank you.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/faith_hill.jpg",
+          firstname: "Isheen",
+          lastname: "Kae"
+        }
       }]
     }, {
       id: 4,
@@ -94,6 +242,43 @@ export class TutorListPage implements OnInit {
       }, {
         name: 'School Graduated',
         sub: 'University of Cebu'
+      }],
+      reviews: [{
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Information overload from our session. Thank you.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/faith_hill.jpg",
+          firstname: "Isheen",
+          lastname: "Kae"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Will definitely book again!",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/nugatowa.jpg",
+          firstname: "Ivan",
+          lastname: "Jane"
+        }
+      }, {
+        id: 0,
+        tutorId: 0,
+        studentId: 0,
+        message: "Rey, thank you for teaching me.",
+        date: "July 3, 2019",
+        rate: "4",
+        studentInfo: {
+          avatar: "assets/avatar/jack_sparrow_sullen.jpg",
+          firstname: "Alexandrei",
+          lastname: "the Great"
+        }
       }]
     }]
 

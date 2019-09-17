@@ -31,6 +31,20 @@
         </ion-item>
       </ion-list>
 
+      <br>
+      Reviews
+      <ion-list>
+        <ion-item *ngFor="let review of reviews;">
+          <ion-avatar slot="start">
+            <img [src]="review.studentInfo.avatar">
+          </ion-avatar>
+          <ion-label>
+            <h3>{{ review.studentInfo.firstname }} {{ review.studentInfo.lastname }}</h3>
+            <p>{{ review.message }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
     </ion-card-content>
   </ion-card>
 </ion-content>

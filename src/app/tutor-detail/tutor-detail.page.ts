@@ -11,6 +11,7 @@ export class TutorDetailPage implements OnInit {
 
   tutor;
   credentials;
+  reviews;
 
   subjectId;
   starttime;
@@ -24,6 +25,7 @@ export class TutorDetailPage implements OnInit {
   ngOnInit() {
     this.tutor = JSON.parse(this.route.snapshot.paramMap.get('tutor'));
     this.credentials = this.tutor.credentials;
+    this.reviews = this.tutor.reviews;
     console.log(this.tutor);
     this.subjectId = this.route.snapshot.paramMap.get('subjectId');
     this.starttime = this.route.snapshot.paramMap.get('starttime');
