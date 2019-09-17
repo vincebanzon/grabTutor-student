@@ -1,8 +1,9 @@
 Todo: 
 
+WIP: Screen flow
+
 Modal to infrom when connection or disconnected from firebase
-List previous schedules
-Screen flow
+later-> List previous schedules
 
 Applications
   1. tutor (mobile)
@@ -17,17 +18,37 @@ Price varies by level
 
 
       / Add status in homepage
-Add Payment page for credit card input
-Terms and Agreements
-Reviews for tutor by users (not rating)
-Schedule detail can view tutor profile
-Credits for each account
-Price for each booking
-Sign up page for student
+      / Add Payment page for credit card input
+      / Terms and Agreements
+      / Reviews for tutor by users (not rating)
+      / Schedule detail can view tutor profile
+      / Credits for each account
+      / Price for each booking
+WIP: Sign up page for student
 
 Tutor app
 List of all schedules
 Notification
 
+Add confirmation for tutor's side before it can be confirmed on student's end.
+In schedule-detail page of tutor, top-right buttons are 
+  "confirm" 
+    if not yet confirmed
+    then display terms and conditions
+  "cancel"
+    if already confirmed.
+    Add prompt before it can be cancelled.
+
+
+
+
+Blocker:
+ask for terms and conditions for tutee
+ask for terms and conditions for tutor
+
+
+For Tutor terms and agreements:
+  You agree to stay on Tutorial101 platform while tutorin students you've connected with here.
+  You agree to be honest and full of integrity in your interactions with students, and to be especially communicative with your students.
 
 
