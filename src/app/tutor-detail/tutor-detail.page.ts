@@ -69,7 +69,7 @@ export class TutorDetailPage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            console.log('Cancelling schedule');
+            console.log('Booking schedule');
             this.goToHome();
             // this.removeSchedule(this.schedule.id);
           }

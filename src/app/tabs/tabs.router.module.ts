@@ -63,6 +63,11 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'tab3/topup',
+        loadChildren: () => 
+          import('../topup/topup.module').then(m => m.TopupPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
